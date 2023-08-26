@@ -1,29 +1,28 @@
 #include <iostream>
+#include <stack>
 
-class Stack{
+using std::cout; 
+using std::endl; 
+using std::stack;
 
-    static const int MAX_SIZE = 100;
-    int arr[MAX_SIZE];
-    int top;
+int main(){
+    stack <int> pilha;
 
-    public:
-        Stack(){
-            top = -1; //pliha vazia
-        }
-        
-        bool isEmpty(){
-            return top == -1;
-        }
+    pilha.push(10);
+    pilha.push(100);
+    pilha.push(200);
+    pilha.push(300);
 
-        bool isFull(){
-            return top == MAX_SIZE - 1;
-        }
+    cout << "Conteudo da pilha: " << endl;
 
-        void push(int value){
-            if(isFull()){
-                std::cout << "A pilha está cheia";
-            }
-            arr[++top] = value; //se n estiver cheia
-        }
+    while(!pilha.empty()){
+        cout << pilha.top() << " ";
+        pilha.pop(); //remove o elemento do topo
 
-};
+    }
+
+cout << endl;
+
+    return 0;
+
+}
