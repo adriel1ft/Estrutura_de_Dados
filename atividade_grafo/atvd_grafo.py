@@ -12,8 +12,10 @@ class Graph: #p construir o graf0
         print(self.matrix)
         print(self.list)
     
+    #adicionar vertices
     def add_edge(self, u,v):
-
+        self.graph[u][v] = 1
+        self.graph[v][u] = 1
     
     #source = ponto de partida
     def bfs(self,source): 
@@ -27,3 +29,9 @@ class Graph: #p construir o graf0
 
         #adicionando source
         Q.put(source)
+
+        #definir o vértice de origem como visitado
+        isVisited[source] = True
+
+        #definir a distancia do v de origem a ele mesmo
+        dist[source] = 0
