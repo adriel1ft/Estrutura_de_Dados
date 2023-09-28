@@ -23,6 +23,15 @@ public:
         adjList[v].push_back(u);
     }
 
+    //get
+    int getVertices() const {
+        return vertices;
+    }
+
+    const vector<int>& getAdjList(int u) const{
+        return adjList[u];
+    }
+
     void BFS(int s, int t) {
         vector<int> parent(vertices, -1);
         vector<bool> visited(vertices, false);
@@ -62,6 +71,14 @@ public:
 
                 current = parent[current]; //A variável current é atualizada para o pai do vértice atual, permitindo que o loop continue retrocedendo pelo caminho.
             }
+
+            cout << "Caminho entre os vertices " << s << " e " << t << ": ";
+            //percorrer path de trás pra frente
+            for(int i = path.size() - 1; i >=0; i--){
+                cout << path[i];
+                if(i != 0) cout << "->"; //tds tem isso menos o do indice 0
+            }
+            cout << endl;
         } 
 
 
@@ -69,5 +86,38 @@ public:
         
         }
 
+        // Destrutor para desalocação de recursos
+        ~Graph(){
+            adjList.clear();
+        }
+
 
 };
+
+int main(){
+    ifstream inputFile("arq.txt"); //abre no modo leitura
+    int vertices, edges;
+    inputFile >> vertices >> edges; //lendo os valores
+
+    //criando instancia/objeto
+    Graph graph(vertices);
+
+
+    //le e adiciona as aresras ao grafo
+    for(int i = 0; i < edges; i++){
+        int u, v;
+        inputFile >> u >> v; //le a proxima aresta do arquivo
+        graph.addEdge(u,v); //add a aresta ao grafo 
+    }
+
+    int s,t;
+    cout << "Digite o vertice de origem e o vertice de destino: ";
+    cin >> s >> t; //input fo usuario
+
+    //chama o bfs
+    graph.BFS(s,t);
+
+    inputFile.close(); //fecha o arquivo
+    return 0;
+
+}
