@@ -5,6 +5,6 @@ Representação do grafo utilizado no arquivo teste (arq.txt)
 
 
 Exemplo da implementação do BFS
-https://github.com/adriel1ft/Estrutura_de_Dados/blob/ce57bcc40bea9f4e12e4112ed7920e66b6230e81/atividade_grafo/teste_bfs.png
+![atividade_grafo/teste_bfs.png]https://github.com/adriel1ft/Estrutura_de_Dados/blob/ce57bcc40bea9f4e12e4112ed7920e66b6230e81/atividade_grafo/teste_bfs.png
 
 
