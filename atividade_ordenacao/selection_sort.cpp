@@ -27,6 +27,13 @@ void selection_sort(vector<int>& v){
         int aux = v[min_id];
         v[min_id] = v[i];
         v[i] = aux;
+
+        cout << "Vetor apos troca " << i + 1 << ":"<<endl;
+        cout << v[i]<< " eh o menor e trocou de lugar com " << v[min_id] << endl;
+        for(int i=0; i< v.size(); i++){
+        cout << "" << v[i] << " ";
+        
+        }cout << endl << endl;
     }
 
 }
@@ -34,15 +41,18 @@ void selection_sort(vector<int>& v){
 
 int main(){
 
-    vector<int> my_vector = {5,2,1,4,3};
+    vector<int> my_vector = {5,1,42,3,7};
+
+    cout << "Vetor original" << endl;
+
+    for(int x=0; x < my_vector.size(); x++){
+        cout << "" << my_vector[x] << " ";
+    } cout << endl;
 
     selection_sort(my_vector);
 
 
-    cout << "Vetor ordenado:  " << endl;
-    for(int x=0; x< my_vector.size(); x++){
-        cout << "|" << my_vector[x] << "|";
-        }
+    
 
     return 0;
 }
