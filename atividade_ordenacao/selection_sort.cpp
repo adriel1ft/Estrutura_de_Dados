@@ -21,9 +21,11 @@ void selection_sort(vector<int>& v){
 
             if(v[min_id] > v[j]){
 
-                min_id = j;
+                min_id = j; //atualizacao do min_id
             }     
         } 
+
+        //trocando de lugar
         int aux = v[min_id];
         v[min_id] = v[i];
         v[i] = aux;
