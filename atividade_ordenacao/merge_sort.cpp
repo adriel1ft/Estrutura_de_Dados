@@ -62,6 +62,7 @@ void merge_sort(vector<int>& v, int inicio, int fim){
         int meio = (inicio + fim) / 2;
         merge_sort(v, inicio, meio); //primeira metade
         merge_sort(v, meio+1, fim);
+        merge(v,inicio, meio,fim);
     }
 
 
