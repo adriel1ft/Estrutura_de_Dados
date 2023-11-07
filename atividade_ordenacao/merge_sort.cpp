@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -68,17 +69,52 @@ void merge_sort(vector<int>& v, int inicio, int fim){
 
 }
 
-int main(){
+int main() {
+    string file_name = "num.1000.2.txt"; 
+    vector<int> my_vector; // Vamos utilizar vetor
 
-    vector<int> my_vector = {2,1,9,7,5};
+    // Abra o arquivo para leitura
+    ifstream file(file_name);
+
+    if (!file.is_open()) {
+        cerr << "Nao foi possivel abrir o arquivo." << std::endl;
+        return 1;
+    }
+
+    int number;
+    int count = 0;
+
+
+    while( file >> number){
+        my_vector.push_back(number);
+        count++;
+    }
 
     int tam = my_vector.size();
-
-    merge_sort(my_vector,0,tam -1);
+    
+    cout << "Vetor original" << endl;
 
     for(int x=0; x < tam; x++){
         cout << "" << my_vector[x] << " ";
     } cout << endl;
+    
+    
+    
+    merge_sort(my_vector,0,tam-1);
+    
+    cout << "Vetor ordenado:" << endl;
+
+    for(int x=0; x < tam; x++){
+        cout << "" << my_vector[x] << " ";
+    } cout << endl;
+    
+
+
+
+    // Feche o arquivo
+    file.close();
+
+    return 0;
 
 
 
