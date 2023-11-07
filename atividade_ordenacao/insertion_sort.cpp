@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 #include <vector>
 
 using namespace std;
@@ -20,6 +19,13 @@ void insertion_sort(vector<int>& v, int size){
             j--; //vai andando pra frente (esquerda) pra fzr as comparacoes
 
         }
+        
+        // Imprime o vetor a cada iteração
+            cout << "vetor na iteracao " << i << ":"<< endl;
+            for (int x = 0; x < size; x++) {
+                cout << v[x] << " ";
+            }
+            cout << endl;
 
     }
 }
@@ -31,8 +37,6 @@ int main(){
     //cout << "Vetor original" << endl;
 
     int tam = my_vector.size();
-
-    
 
     insertion_sort(my_vector, tam);
 
