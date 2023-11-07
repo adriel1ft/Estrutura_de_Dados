@@ -17,22 +17,16 @@ void insertion_sort(vector<int>& v, int size){
         while(j>=0 && atual < v[j]){
             v[j+1] = v[j]; // move os elementos maiores para direita
             v[j] = atual; // insere o valor na posição correta
-            j--; 
+            j--; //vai andando pra frente (esquerda) pra fzr as comparacoes
 
         }
 
-
-
-
     }
-
-
-
 }
 
 int main(){
 
-    vector<int> my_vector = {5,1,42,3,7};
+    vector<int> my_vector = {5,1,42,3,7,2};
 
     //cout << "Vetor original" << endl;
 
