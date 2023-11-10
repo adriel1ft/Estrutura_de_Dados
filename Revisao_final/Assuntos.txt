@@ -1,0 +1,19 @@
+---- Assuntos para a final de Estrutura de Dados ----
+
+Pilha
+Fila
+Listas Encadeadas
+
+Grafo
+Lista de adjacencia
+Matriz adjacencia
+DFS
+BFS
+Menor caminho
+
+Árvore
+ABP
+AVL
+Balanceamento
+
+Hash Table
