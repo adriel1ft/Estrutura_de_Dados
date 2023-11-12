@@ -36,7 +36,7 @@ public:
         stack<int> pilha;
 
         pilha.push(atual); //add atual à pilha
-
+ 
         while (!pilha.empty()){ //enqt pilha n vazia
             int atual = pilha.top();
             pilha.pop();
@@ -52,6 +52,11 @@ public:
                 }
             }
         }
+    }
+
+
+    void BFS(int atual){
+
     }
 
 };
